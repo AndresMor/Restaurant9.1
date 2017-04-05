@@ -23,6 +23,7 @@ public class CocinaView extends javax.swing.JFrame {
      */
     public CocinaView() {
         initComponents();
+        setTitle("Cocina");
     }
 
     /**
