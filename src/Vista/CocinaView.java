@@ -10,7 +10,14 @@ package Vista;
  * @author sony
  */
 public class CocinaView extends javax.swing.JFrame {
+    public GeneralView generalView;
+    public GeneralView getGeneralView() {
+        return generalView;
+    }
 
+    public void setGeneralView(GeneralView generalView) {
+        this.generalView = generalView;
+    }
     /**
      * Creates new form CocinaView
      */
@@ -31,6 +38,8 @@ public class CocinaView extends javax.swing.JFrame {
         TableCocina = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        Btn_Back = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -45,16 +54,33 @@ public class CocinaView extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(TableCocina);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 210, 180));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 240, 230));
 
         jButton1.setText("Info.Pedido");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 40, 110, -1));
 
         jButton2.setText("Cocinar");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 50, 115, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 110, -1));
+
+        Btn_Back.setText("Volver");
+        Btn_Back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_BackActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 110, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Kitchen.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Btn_BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_BackActionPerformed
+        // TODO add your handling code here:
+        generalView.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_Btn_BackActionPerformed
 
     /**
      * @param args the command line arguments
@@ -92,9 +118,11 @@ public class CocinaView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Btn_Back;
     private javax.swing.JTable TableCocina;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

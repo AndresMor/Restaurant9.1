@@ -1,2 +1,4 @@
-Postre,Sopa,1,1500
-Bebida,Agua,1,5000
+Ingrediente,Arroz ,10,0
+Ingrediente,Sopa,10,0
+Postre,Brownie,10,1500
+Bebida,Cocakola,10,1500

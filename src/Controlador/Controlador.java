@@ -8,6 +8,7 @@ package Controlador;
 import Modelo.Archivo;
 import Modelo.Restaurant91;
 import static Modelo.Restaurant91.generalView;
+import Vista.CocinaView;
 import Vista.GeneralView;
 import Vista.MeseroView;
 import Vista.StockView;
@@ -57,6 +58,10 @@ public class Controlador {
     }
     public void setFtGeneralView(boolean ft){
         generalView.setFt(ft);
+    }
+
+    public void setCocinaViewToGeneralView(CocinaView cocinaView, GeneralView generalView) {
+        generalview.setCocinaView(cocinaView);
     }
 
     

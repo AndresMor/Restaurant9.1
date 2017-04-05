@@ -11,6 +11,7 @@ package Vista;
  */
 public class GeneralView extends javax.swing.JFrame {
     public static MeseroView meseroView;
+    public static CocinaView cocinaView;
     public static StockView stockView;
     private boolean ft=true;
 
@@ -28,11 +29,20 @@ public class GeneralView extends javax.swing.JFrame {
     public void setMeseroView(MeseroView meseroView) {
         GeneralView.meseroView = meseroView;
     }
+
+    public void setCocinaView(CocinaView cocinaView) {
+        GeneralView.cocinaView = cocinaView;
+    }
+    
+   
+    
     /**
      * Creates new form GeneralView
      */
     public GeneralView() {
         initComponents();
+        setLocationRelativeTo(null);
+        setTitle("Vista Gerente");
     }
 
     /**
@@ -46,12 +56,13 @@ public class GeneralView extends javax.swing.JFrame {
 
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        Label_Cocina = new javax.swing.JLabel();
         showMeseroViewBtn = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -73,17 +84,17 @@ public class GeneralView extends javax.swing.JFrame {
         });
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, 225, 85));
 
-        jLabel7.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/chef.png"))); // NOI18N
-        jLabel7.setText("Cocina");
-        jLabel7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+        Label_Cocina.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        Label_Cocina.setForeground(new java.awt.Color(255, 255, 255));
+        Label_Cocina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/chef.png"))); // NOI18N
+        Label_Cocina.setText("Cocina");
+        Label_Cocina.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        Label_Cocina.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel7MouseClicked(evt);
+                Label_CocinaMouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, 225, 85));
+        getContentPane().add(Label_Cocina, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, 225, 85));
 
         showMeseroViewBtn.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         showMeseroViewBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -114,12 +125,14 @@ public class GeneralView extends javax.swing.JFrame {
         stockView.setVisible(true);
     }//GEN-LAST:event_jLabel4MouseClicked
 
-    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
-
-    }//GEN-LAST:event_jLabel7MouseClicked
+    private void Label_CocinaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Label_CocinaMouseClicked
+        cocinaView.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_Label_CocinaMouseClicked
 
     private void showMeseroViewBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_showMeseroViewBtnMouseClicked
         meseroView.setVisible(true);
+        dispose();
     }//GEN-LAST:event_showMeseroViewBtnMouseClicked
 
     /**
@@ -158,11 +171,11 @@ public class GeneralView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Label_Cocina;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel showMeseroViewBtn;
     // End of variables declaration//GEN-END:variables
 
